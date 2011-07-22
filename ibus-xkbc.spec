@@ -1,7 +1,7 @@
 Summary:	The XKBC engine for IBus input platform
 Name:		ibus-xkbc
 Version:	1.3.3.20100922
-Release:	0.1
+Release:	1
 License:	GPL v2
 Group:		Libraries
 Source0:	http://cloud.github.com/downloads/sun-im/ibus-xkbc/%{name}-%{version}.tar.gz
