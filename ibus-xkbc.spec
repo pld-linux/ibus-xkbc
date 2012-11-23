@@ -1,4 +1,5 @@
 Summary:	The XKBC engine for IBus input platform
+Summary(pl.UTF-8):	Silnik XKBC dla platformy wprowadzania IBus
 Name:		ibus-xkbc
 Version:	1.3.3.20100922
 Release:	1
@@ -8,12 +9,13 @@ Source0:	http://cloud.github.com/downloads/sun-im/ibus-xkbc/%{name}-%{version}.t
 # Source0-md5:	96ad4c25356e07223a862b5067c9422c
 Patch0:		%{name}-scripts.patch
 URL:		http://github.com/sun-im/ibus-xkbc/
-BuildRequires:	gettext-autopoint
+BuildRequires:	autoconf >= 2.50
+BuildRequires:	automake >= 1:1.10
 BuildRequires:	gettext-devel
 BuildRequires:	glib2-devel
 BuildRequires:	libtool
 BuildRequires:	pkgconfig
-BuildRequires:	python-devel
+BuildRequires:	python-devel >= 1:2.6
 BuildRequires:	rarian-compat
 Requires:	ibus >= 1.3.0
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -22,7 +24,12 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
 The XKBC engine for IBus platform. It provides keyboard layout
-emulation input method.
+emulation input method based on XKeyboard Config data.
+
+%description -l pl.UTF-8
+Silnik XKBC dla platformy IBus. Udostępmia metodę wprowadzania
+znaków polegającą na emulacji układu klawiatury w oparciu o dane
+konfiguracyjne XKeyboard Config.
 
 %prep
 %setup -q
@@ -52,6 +59,7 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc AUTHORS COPYING README
 %attr(755,root,root) %{_bindir}/ibus-keyboard
-%attr(755,root,root) %{_libexecdir}/*
+%attr(755,root,root) %{_libexecdir}/ibus-engine-xkbc
+%attr(755,root,root) %{_libexecdir}/ibus-setup-xkbc
 %{_datadir}/ibus-xkbc
-%{_datadir}/ibus/component/*
+%{_datadir}/ibus/component/xkbc.xml
