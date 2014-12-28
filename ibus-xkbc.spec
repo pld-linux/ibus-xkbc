@@ -11,7 +11,7 @@ Patch0:		%{name}-scripts.patch
 URL:		http://github.com/sun-im/ibus-xkbc/
 BuildRequires:	autoconf >= 2.50
 BuildRequires:	automake >= 1:1.10
-BuildRequires:	gettext-devel
+BuildRequires:	gettext-tools
 BuildRequires:	glib2-devel
 BuildRequires:	libtool
 BuildRequires:	pkgconfig
